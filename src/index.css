@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #f4f4f2;
+  --color-ink: #111111;
+  --color-accent: #ff4d2e;
+  --color-accent-2: #ffb347;
+  --color-line: #e4e4e0;
+
+  --shadow-soft: 0 20px 50px -20px rgba(0, 0, 0, 0.25);
+
+  --font-heading: "Quicksand", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-ink);
+  overflow-x: hidden;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-heading {
+  font-family: "Quicksand", sans-serif;
+}
+
+.font-body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Selection */
+::selection {
+  background: #ff4d2e;
+  color: #ffffff;
+}
+
+/* Smooth links and buttons */
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Reduce motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
