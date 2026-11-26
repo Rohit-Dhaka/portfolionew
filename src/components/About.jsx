@@ -74,7 +74,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-[#0b0b0d] py-28 text-white sm:py-36"
+      className="relative overflow-hidden bg-[#0b0b0d] text-white py-16 sm:py-18 lg:py-20 "
     >
       {/* Ambient orange light - no grid */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">

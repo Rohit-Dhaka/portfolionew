@@ -64,7 +64,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 aria-label={social.name}
                 title={social.name}
-                className="group flex h-11 w-11 items-center justify-center rounded-full bg-white text-indigo-500 transition-all duration-300 hover:-translate-y-1 hover:bg-accent hover:text-white"
+                className="group flex h-11 w-11 items-center justify-center rounded-full bg-white text-accent transition-all duration-300 hover:-translate-y-1 hover:bg-accent hover:text-white"
               >
                 <Icon size={19} />
               </a>
@@ -84,7 +84,7 @@ export default function Footer() {
           {email && (
             <a
               href={`mailto:${email}`}
-              className="group inline-flex items-center gap-2.5 text-sm text-slate-300 transition-colors hover:text-white"
+              className="group inline-flex items-center gap-2.5 text-sm text-slate-300 transition-colors hover:text-accent"
             >
               <Mail
                 size={18}

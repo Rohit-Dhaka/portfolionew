@@ -58,7 +58,7 @@ const getLogo = (name) => {
   return logoMap[normalized] || normalized.replace(/[^a-z0-9]/g, "");
 };
 
-function SkillChip({ skill, group, index }) {
+function SkillChip({ skill, group }) {
   const logo = getLogo(skill.name);
 
   return (
@@ -153,7 +153,7 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-[#f8f7f4] py-16 sm:py-20"
+      className="relative overflow-hidden bg-[#f8f7f4] py-16 sm:py-18 lg:py-20"
     >
       <div className="mx-auto w-[min(1150px,92%)]">
 
@@ -231,14 +231,11 @@ export default function Skills() {
               direction="right"
               speed={42}
             />
-          )}
-
-   
+          )}   
         </motion.div>
 
     
       </div>
-
       {/* Marquee styles */}
       <style>{`
         .skill-marquee:hover .skill-marquee-card {

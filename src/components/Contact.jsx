@@ -60,7 +60,7 @@ const icons = {
 // ---------------------------------------------
 const Field = ({ icon, children, className = "" }) => (
   <label
-    className={`group flex items-start gap-3 rounded-sm border border-[#e5e2dc] bg-white px-4 transition-all duration-300 hover:border-[#c9c4bb] focus-within:border-accent ${className}`}
+    className={`group flex items-start gap-3 rounded-xl border border-[#e5e2dc] bg-white px-4 transition-all duration-300 hover:border-[#c9c4bb] focus-within:border-accent ${className}`}
   >
     <span className="mt-[15px] shrink-0 text-[#99948c] transition-colors duration-300 group-focus-within:text-accent">
       <Icon className="h-[18px] w-[18px]">{icons[icon]}</Icon>
@@ -71,7 +71,7 @@ const Field = ({ icon, children, className = "" }) => (
 );
 
 const inputCls =
-  "w-full bg-transparent py-4 text-sm text-[#222] outline-none placeholder:text-[#aaa69f] sm:text-[15px]";
+  "w-full bg-transparent rounded-md py-4 text-sm text-[#222] outline-none placeholder:text-[#aaa69f] sm:text-[15px]";
 
 // ---------------------------------------------
 // Animation
@@ -139,7 +139,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative mx-2 mt-4 overflow-hidden rounded-t-[32px] bg-[#f8f7f4] px-4 pb-20 pt-20 text-[#171717] sm:mx-4 sm:rounded-t-[48px] sm:px-6 sm:pb-24 sm:pt-28"
+      className="relative bg-[#f8f7f4] py-16 sm:py-18 lg:py-20"
     >
       {/* Background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -169,15 +169,7 @@ export default function Contact() {
           className="absolute -bottom-32 -left-32 h-[300px] w-[300px] rounded-full bg-amber-100/50 blur-[100px]"
         />
 
-        {/* Subtle grid */}
-        <div
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage:
-              "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)",
-            backgroundSize: "50px 50px",
-          }}
-        />
+   
       </div>
 
       <motion.div
@@ -234,7 +226,7 @@ export default function Contact() {
           className="mx-auto mt-10 grid max-w-3xl gap-4 sm:mt-14 sm:gap-5"
         >
           {/* Name & Email */}
-          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
+          <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 ">
             <Field icon="user">
               <input
                 name="name"

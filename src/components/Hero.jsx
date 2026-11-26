@@ -1,4 +1,3 @@
-
 import { useRef, useState, useEffect } from "react";
 import {
   AnimatePresence,
@@ -116,7 +115,7 @@ function Pill({ role }) {
           damping: 15,
         },
       }}
-      className="relative inline-flex min-h-[40px] items-center gap-2.5 overflow-hidden rounded-full border border-accent/20 bg-white px-3 py-1.5 align-middle shadow-[0_5px_25px_rgba(255,77,46,0.08)] sm:min-h-[50px] sm:px-4 sm:py-2"
+      className="relative inline-flex min-h-[40px] items-center gap-2.5 overflow-hidden rounded-full border border-accent/20 bg-white px-3 py-1.5 align-middle shadow-[0_5px_25px_rgba(99,102,241,0.08)] sm:min-h-[50px] sm:px-4 sm:py-2"
     >
       {/* Shine effect */}
       <motion.span
@@ -180,7 +179,7 @@ function Pill({ role }) {
   );
 }
 
-export default function Hero() {
+export default function Hero({ scrollContainerRef }) {
   const sectionRef = useRef(null);
 
   // Dynamic role state
@@ -188,6 +187,8 @@ export default function Hero() {
 
   // Change role every 2.5 seconds
   useEffect(() => {
+    if (roles.length <= 1) return;
+
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
     }, 2500);
@@ -195,8 +196,9 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
-  // Scroll animation
+  // Scroll animation linked to main container
   const { scrollYProgress } = useScroll({
+    container: scrollContainerRef,
     target: sectionRef,
     offset: ["start start", "end start"],
   });
@@ -211,7 +213,7 @@ export default function Hero() {
     <section
       id="home"
       ref={sectionRef}
-      className="relative flex h-screen min-h-[100svh] items-center justify-center overflow-hidden bg-bg px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
+      className="relative flex min-h-screen snap-start items-center justify-center overflow-hidden bg-bg px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16"
     >
       {/* Background effects */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -447,8 +449,6 @@ export default function Hero() {
             </span>
           </motion.a>
         </motion.div>
-
-  
       </motion.div>
 
       {/* Scroll indicator */}
@@ -456,7 +456,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.1 }}
-        className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2  "
+        className="absolute bottom-0 left-1/2 z-10 -translate-x-1/2"
       >
         <motion.a
           href="#about"

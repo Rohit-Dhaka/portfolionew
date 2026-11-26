@@ -322,7 +322,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative overflow-hidden bg-ink py-20 text-white sm:py-28"
+      className="relative overflow-hidden bg-ink  text-white py-16 sm:py-18 lg:py-20"
     >
       {/* background decoration */}
       <div className="pointer-events-none absolute left-1/2 top-0 h-[400px] w-[600px] -translate-x-1/2 rounded-full bg-accent/[0.06] blur-[130px]" />
@@ -379,7 +379,7 @@ export default function Projects() {
               </span>
 
               <div>
-                <h3 className="text-2xl font-bold sm:text-3xl">
+                <h3 className="text-2xl font-heading font-bold sm:text-3xl ">
                   Full Stack Projects
                 </h3>
 

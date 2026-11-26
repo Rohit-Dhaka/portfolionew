@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
@@ -5,7 +6,7 @@
 @theme {
   --color-bg: #f4f4f2;
   --color-ink: #111111;
-  --color-accent: #ff4d2e;
+  --color-accent: #6366F1;
   --color-accent-2: #ffb347;
   --color-line: #e4e4e0;
 
@@ -14,6 +15,10 @@
   --font-heading: "Quicksand", sans-serif;
   --font-body: "Inter", sans-serif;
 }
+
+/* =========================
+   Global
+========================= */
 
 html {
   scroll-behavior: smooth;
@@ -26,7 +31,12 @@ body {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
 }
+
+/* =========================
+   Typography
+========================= */
 
 .font-heading {
   font-family: "Quicksand", sans-serif;
@@ -36,21 +46,69 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* Selection */
+/* =========================
+   Selection
+========================= */
+
 ::selection {
-  background: #ff4d2e;
+  background: #6366F1;
   color: #ffffff;
 }
 
-/* Smooth links and buttons */
+/* =========================
+   Smooth links & buttons
+========================= */
+
 a,
 button {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Reduce motion accessibility */
+/* =========================
+   Hide scrollbar
+   Keep scrolling functional
+========================= */
+
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+/* =========================
+   Section Snap Scrolling
+========================= */
+
+.snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: normal;
+}
+.snap-container > footer {
+  scroll-snap-align: none;
+  height: auto;
+  min-height: auto;
+}
+
+/* =========================
+   Reduce motion accessibility
+========================= */
+
 @media (prefers-reduced-motion: reduce) {
-  html {
+  html,
+  .snap-container {
     scroll-behavior: auto;
   }
 }
